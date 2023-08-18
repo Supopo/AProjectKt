@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appbar_toleft">22dp</dimen>
+    <dimen name="appbar_img_width">34dp</dimen>
+</resources>

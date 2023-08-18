@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+//kapt 是一个 Gradle 插件，用于处理 Kotlin 注解处理器，其中包括 kaptGenerateStubs 任务，它会生成 Kotlin 语言的桩代码。
+//将 generateStubs = true 添加到 kapt 配置中，可以让 Gradle 在编译时生成 Kotlin 语言的桩代码，从而提高应用程序的性能和减少运行时开销。
+kapt {
+    generateStubs = true
+}
+
+android {
+    compileSdk 33
+    namespace 'com.zoo.xxx'
+
+    defaultConfig {
+        applicationId "com.zoo.xxx"
+        minSdk 23
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    //buildFeatures 用于在 Android Gradle 插件中启用或禁用特定的构建功能。
+    //这些功能可以是 Kotlin、View Binding、Data Binding、Compose 等。它的作用范围更广，不仅仅是 Data Binding。
+    buildFeatures{
+        dataBinding = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(path: ':mvvmkt')
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
