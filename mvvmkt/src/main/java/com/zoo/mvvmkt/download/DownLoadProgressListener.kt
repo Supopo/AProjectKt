@@ -1,10 +1,5 @@
 package com.zoo.mvvmkt.download
 
-/**
- * @author : hgj
- * @date   : 2020/7/13
- */
-
 interface DownLoadProgressListener {
 
     /**

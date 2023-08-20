@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 
-
 class NetworkStateReceive : BroadcastReceiver() {
     var isInit = true
     override fun onReceive(context: Context, intent: Intent) {

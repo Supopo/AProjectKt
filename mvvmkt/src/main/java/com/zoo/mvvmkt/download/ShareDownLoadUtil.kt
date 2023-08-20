@@ -5,10 +5,6 @@ import android.content.SharedPreferences
 import android.os.Build
 import com.zoo.mvvmkt.util.appContext
 
-/**
- * @author : hgj
- * @date   : 2020/7/13
- */
 object ShareDownLoadUtil {
 
     private var path = Build.BRAND + "_" + Build.MODEL + "_" + "download_sp"

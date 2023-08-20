@@ -13,7 +13,6 @@ import com.zoo.mvvmkt.R
 import java.lang.reflect.InvocationTargetException
 import kotlin.math.roundToInt
 
-
 object SettingUtil {
 
     /**

@@ -1,8 +1,5 @@
-package me.hgj.jetpackmvvm.ext.download
+package com.zoo.mvvmkt.download
 
-import com.zoo.mvvmkt.download.DownLoadPool
-import com.zoo.mvvmkt.download.OnDownLoadListener
-import com.zoo.mvvmkt.download.ShareDownLoadUtil
 import com.zoo.mvvmkt.util.appContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -11,11 +8,6 @@ import java.io.File
 import java.io.RandomAccessFile
 import java.nio.channels.FileChannel
 import java.text.DecimalFormat
-
-/**
- * @author : hgj
- * @date   : 2020/7/13
- */
 
 object FileTool {
 

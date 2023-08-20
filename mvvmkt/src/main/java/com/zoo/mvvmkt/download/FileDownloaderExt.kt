@@ -1,14 +1,8 @@
-package me.hgj.jetpackmvvm.ext.download
+package com.zoo.mvvmkt.download
 
 import androidx.lifecycle.MutableLiveData
 import com.zoo.mvvmkt.download.DownloadResultState
 import com.zoo.mvvmkt.download.OnDownLoadListener
-
-/**
- * @author : hgj
- * @date   : 2020/6/30
- *
- */
 
 fun downLoadExt(downloadResultState: MutableLiveData<DownloadResultState>): OnDownLoadListener {
     return object : OnDownLoadListener {

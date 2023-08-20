@@ -1,4 +1,6 @@
-package com.zoo.mvvmkt.apirequest
+package com.zoo.xxx.net
+
+import com.zoo.mvvmkt.apirequest.BaseResponse
 
 data class ApiResponse<T>(
     val code: Int,

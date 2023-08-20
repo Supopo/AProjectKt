@@ -6,11 +6,6 @@ import kotlinx.coroutines.isActive
 import java.util.concurrent.ConcurrentHashMap
 
 
-/**
- * @author : hgj
- * @date   : 2020/7/13
- */
-
 object DownLoadPool {
 
 

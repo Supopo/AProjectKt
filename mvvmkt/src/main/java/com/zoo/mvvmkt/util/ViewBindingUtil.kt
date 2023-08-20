@@ -9,7 +9,6 @@ import androidx.viewbinding.ViewBinding
 import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.ParameterizedType
 
-
 @JvmName("inflateWithGeneric")
 fun <VB : ViewBinding> AppCompatActivity.inflateBindingWithGeneric(layoutInflater: LayoutInflater): VB =
     withGenericBindingClass<VB>(this) { clazz ->

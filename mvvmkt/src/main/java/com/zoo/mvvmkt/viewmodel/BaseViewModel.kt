@@ -3,7 +3,6 @@ package com.zoo.mvvmkt.viewmodel
 import androidx.lifecycle.ViewModel
 import com.kunminx.architecture.domain.message.MutableResult
 
-
 open class BaseViewModel : ViewModel() {
 
     val loadingChange: UiLoadingChange by lazy { UiLoadingChange() }
