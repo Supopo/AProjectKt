@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.apirequest
+package com.zoo.mvvmkt.network
 
 class AppException : Exception {
 

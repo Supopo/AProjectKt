@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.apirequest
+package com.zoo.mvvmkt.network
 
 import android.net.ParseException
 import com.google.gson.JsonParseException

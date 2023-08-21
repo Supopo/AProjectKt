@@ -1,9 +1,9 @@
 package com.zoo.mvvmkt.viewmodel
 
 import androidx.lifecycle.viewModelScope
-import com.zoo.mvvmkt.apirequest.AppException
-import com.zoo.mvvmkt.apirequest.BaseResponse
-import com.zoo.mvvmkt.apirequest.ExceptionHandle
+import com.zoo.mvvmkt.network.AppException
+import com.zoo.mvvmkt.network.BaseResponse
+import com.zoo.mvvmkt.network.ExceptionHandle
 import com.zoo.mvvmkt.util.loge
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

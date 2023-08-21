@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.apirequest
+package com.zoo.mvvmkt.network
 
 import me.jessyan.retrofiturlmanager.RetrofitUrlManager
 import okhttp3.OkHttpClient

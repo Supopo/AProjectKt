@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.network
+package com.zoo.mvvmkt.network.manager
 
 import com.kunminx.architecture.domain.message.MutableResult
 

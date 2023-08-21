@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.apirequest
+package com.zoo.mvvmkt.network
 
 enum class Error(private val code: Int, private val err: String) {
 

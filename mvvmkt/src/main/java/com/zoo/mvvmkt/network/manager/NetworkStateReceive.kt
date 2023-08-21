@@ -1,9 +1,10 @@
-package com.zoo.mvvmkt.network
+package com.zoo.mvvmkt.network.manager
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
+import com.zoo.mvvmkt.network.NetworkUtil
 
 class NetworkStateReceive : BroadcastReceiver() {
     var isInit = true

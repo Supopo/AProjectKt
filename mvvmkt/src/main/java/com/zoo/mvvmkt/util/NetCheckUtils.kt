@@ -7,9 +7,9 @@ import android.net.wifi.WifiManager
 import android.telephony.TelephonyManager
 
 /**
- * 判断网络信号
+ * 网络信号判断
  */
-object NetUtils {
+object NetCheckUtils {
     const val NETWORK_NONE = 0 // 没有网络连接
     const val NETWORK_WIFI = 1 // wifi连接
     const val NETWORK_2G = 2 // 2G

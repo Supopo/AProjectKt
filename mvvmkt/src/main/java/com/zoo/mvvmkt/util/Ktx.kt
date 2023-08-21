@@ -10,7 +10,7 @@ import android.net.Uri
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.zoo.mvvmkt.callback.KtxAppLifeObserver
 import com.zoo.mvvmkt.callback.KtxLifeCycleCallBack
-import com.zoo.mvvmkt.network.NetworkStateReceive
+import com.zoo.mvvmkt.network.manager.NetworkStateReceive
 
 
 val appContext: Application by lazy { Ktx.app }

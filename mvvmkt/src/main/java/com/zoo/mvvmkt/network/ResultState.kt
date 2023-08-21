@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.apirequest
+package com.zoo.mvvmkt.network
 
 import com.kunminx.architecture.domain.message.MutableResult
 

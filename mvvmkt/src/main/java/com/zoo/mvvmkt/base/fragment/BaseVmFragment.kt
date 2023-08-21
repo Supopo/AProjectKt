@@ -11,8 +11,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.zoo.mvvmkt.getVmClazz
-import com.zoo.mvvmkt.network.NetState
-import com.zoo.mvvmkt.network.NetworkStateManager
 import com.zoo.mvvmkt.viewmodel.BaseViewModel
 
 
