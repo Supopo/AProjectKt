@@ -1,6 +1,7 @@
 package com.zoo.xxx.base
 
 import android.os.Bundle
+import android.view.View
 import androidx.databinding.ViewDataBinding
 import com.zoo.mvvmkt.util.dismissLoadingExt
 import com.zoo.mvvmkt.util.showLoadingExt
@@ -16,4 +17,5 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : MBaseVmD
     override fun dismissLoading() {
         dismissLoadingExt()
     }
+
 }

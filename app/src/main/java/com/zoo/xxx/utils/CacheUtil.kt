@@ -1,86 +1,38 @@
 package com.zoo.xxx.utils
 
-import android.text.TextUtils
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.tencent.mmkv.MMKV
+import com.zoo.mvvmkt.util.MMKVUtils
 import com.zoo.xxx.bean.UserInfo
 
 object CacheUtil {
+    private const val USER_INFO = "userInfo"
+    private const val IS_LOGIN = "isLogin"
+
     /**
      * 获取保存的账户信息
      */
     fun getUser(): UserInfo? {
-        val kv = MMKV.mmkvWithID("app")
-        val userStr = kv.decodeString("user")
-        return if (TextUtils.isEmpty(userStr)) {
-           null
-        } else {
-            Gson().fromJson(userStr, UserInfo::class.java)
-        }
+        return MMKVUtils.getData4Json(USER_INFO)
     }
 
     /**
      * 设置账户信息
      */
-    fun setUser(userResponse: UserInfo?) {
-        val kv = MMKV.mmkvWithID("app")
-        if (userResponse == null) {
-            kv.encode("user", "")
-            setIsLogin(false)
-        } else {
-            kv.encode("user", Gson().toJson(userResponse))
-            setIsLogin(true)
-        }
-
+    fun setUser(userInfo: UserInfo?) {
+        MMKVUtils.saveData2Json(USER_INFO, userInfo)
     }
 
     /**
      * 是否已经登录
      */
     fun isLogin(): Boolean {
-        val kv = MMKV.mmkvWithID("app")
-        return kv.decodeBool("login", false)
+        return MMKVUtils.instance().decodeBool(IS_LOGIN, false)
     }
 
     /**
      * 设置是否已经登录
      */
     fun setIsLogin(isLogin: Boolean) {
-        val kv = MMKV.mmkvWithID("app")
-        kv.encode("login", isLogin)
+        MMKVUtils.instance().encode(IS_LOGIN, isLogin)
     }
 
-    /**
-     * 是否是第一次登陆
-     */
-    fun isFirst(): Boolean {
-        val kv = MMKV.mmkvWithID("app")
-        return kv.decodeBool("first", true)
-    }
-    /**
-     * 是否是第一次登陆
-     */
-    fun setFirst(first:Boolean): Boolean {
-        val kv = MMKV.mmkvWithID("app")
-        return kv.encode("first", first)
-    }
-
-    /**
-     * 获取搜索历史缓存数据
-     */
-    fun getSearchHistoryData(): ArrayList<String> {
-        val kv = MMKV.mmkvWithID("cache")
-        val searchCacheStr =  kv.decodeString("history")
-        if (!TextUtils.isEmpty(searchCacheStr)) {
-            return Gson().fromJson(searchCacheStr
-                , object : TypeToken<ArrayList<String>>() {}.type)
-        }
-        return arrayListOf()
-    }
-
-    fun setSearchHistoryData(searchResponseStr: String) {
-        val kv = MMKV.mmkvWithID("cache")
-        kv.encode("history",searchResponseStr)
-    }
 }

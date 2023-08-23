@@ -11,7 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.zoo.mvvmkt.R
 import com.zoo.mvvmkt.databinding.ActivityBaseBinding
 import com.zoo.mvvmkt.getVmClazz
-import com.zoo.mvvmkt.util.notNull
+import com.zoo.mvvmkt.network.manager.NetState
+import com.zoo.mvvmkt.network.manager.NetworkStateManager
+import com.zoo.mvvmkt.ext.notNull
 import com.zoo.mvvmkt.viewmodel.BaseViewModel
 
 abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {

@@ -3,6 +3,7 @@ package com.zoo.mvvmkt.network.interceptor.logging
 import android.text.TextUtils
 import com.zoo.mvvmkt.network.interceptor.CharacterHandler.Companion.jsonFormat
 import com.zoo.mvvmkt.network.interceptor.CharacterHandler.Companion.xmlFormat
+import com.zoo.mvvmkt.network.interceptor.LogUtils
 import com.zoo.mvvmkt.network.interceptor.logging.LogInterceptor.Companion.isJson
 import com.zoo.mvvmkt.network.interceptor.logging.LogInterceptor.Companion.isXml
 import okhttp3.MediaType

@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.callback
+package com.zoo.mvvmkt.lifecycle
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver

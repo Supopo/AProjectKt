@@ -2,7 +2,7 @@ package com.zoo.mvvmkt.network.interceptor
 
 import android.text.TextUtils
 import android.util.Log
-import com.zoo.mvvmkt.util.isTheLogOpen
+import com.zoo.mvvmkt.ext.isTheLogOpen
 
 object LogUtils {
     private const val DEFAULT_TAG = "JetpackMvvm"

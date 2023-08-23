@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.util
+package com.zoo.mvvmkt.ext
 
 import android.util.Log
 

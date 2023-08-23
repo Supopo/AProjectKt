@@ -1,5 +1,8 @@
 package com.zoo.xxx.bean
 
 
-class UserInfo {
+class UserInfo(
+    var userName: String? = null,
+    var userId: String? = null,
+) {
 }

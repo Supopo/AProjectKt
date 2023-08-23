@@ -3,7 +3,7 @@ package com.zoo.xxx.network
 import android.content.Intent
 import com.google.gson.Gson
 import com.zoo.mvvmkt.util.appContext
-import com.zoo.xxx.LoginActivity
+import com.zoo.xxx.activity.LoginActivity
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.ResponseBody

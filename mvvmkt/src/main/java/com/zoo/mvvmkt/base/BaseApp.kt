@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
+import com.tencent.mmkv.MMKV
 
 
 /**
@@ -20,14 +21,11 @@ open class BaseApp : Application(), ViewModelStoreOwner {
 
     private var mFactory: ViewModelProvider.Factory? = null
 
-//    override fun getViewModelStore(): ViewModelStore {
-//        return mAppViewModelStore
-//    }
-
     override fun onCreate() {
         super.onCreate()
         mAppViewModelStore = ViewModelStore()
-
+        //初始化MMKV
+        MMKV.initialize(this)
     }
 
     /**

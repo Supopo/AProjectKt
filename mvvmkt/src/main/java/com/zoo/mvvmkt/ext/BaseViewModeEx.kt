@@ -1,10 +1,10 @@
-package com.zoo.mvvmkt.viewmodel
+package com.zoo.mvvmkt.ext
 
 import androidx.lifecycle.viewModelScope
 import com.zoo.mvvmkt.network.AppException
 import com.zoo.mvvmkt.network.BaseResponse
 import com.zoo.mvvmkt.network.ExceptionHandle
-import com.zoo.mvvmkt.util.loge
+import com.zoo.mvvmkt.viewmodel.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 

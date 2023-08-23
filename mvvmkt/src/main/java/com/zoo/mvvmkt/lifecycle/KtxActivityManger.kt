@@ -1,4 +1,4 @@
-package com.zoo.mvvmkt.callback
+package com.zoo.mvvmkt.lifecycle
 
 import android.app.Activity
 import java.util.*

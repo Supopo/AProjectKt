@@ -1,9 +1,9 @@
-package com.zoo.mvvmkt.callback
+package com.zoo.mvvmkt.lifecycle
 
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import com.zoo.mvvmkt.util.logd
+import com.zoo.mvvmkt.ext.logd
 /**
  * 描述　:
  */

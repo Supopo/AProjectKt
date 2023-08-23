@@ -1,7 +1,7 @@
 package com.zoo.mvvmkt.download
 
 import android.os.Looper
-import com.zoo.mvvmkt.util.logi
+import com.zoo.mvvmkt.ext.logi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.isActive

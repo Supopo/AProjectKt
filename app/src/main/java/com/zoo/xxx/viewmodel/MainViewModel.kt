@@ -1,4 +1,4 @@
-package com.zoo.xxx;
+package com.zoo.xxx.viewmodel;
 
 import com.zoo.mvvmkt.viewmodel.BaseViewModel
 
