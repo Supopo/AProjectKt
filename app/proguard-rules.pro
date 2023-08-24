@@ -232,10 +232,20 @@
 -keepattributes Signature
 -keepattributes Exceptions
 
+
+
+-keep public class com.google.android.material.bottomnavigation.BottomNavigationView { *; }
+-keep public class com.google.android.material.bottomnavigation.BottomNavigationMenuView { *; }
+-keep public class com.google.android.material.bottomnavigation.BottomNavigationPresenter { *; }
+-keep public class com.google.android.material.bottomnavigation.BottomNavigationItemView { *; }
 #-----------自己项目内容---------------
 # 在开发的时候我们可以将所有的实体类放在一个包内，这样我们写一次混淆就行了。
 -keep class com.zoo.xxx.bean.** { *; }
 
 # 自定义View的类
 -keep class com.zoo.xxx.widget.** {*;}
+
+
+
+
 

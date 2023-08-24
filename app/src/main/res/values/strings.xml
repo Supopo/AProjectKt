@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AProjectKt</string>
+    <string name="bottom_name1">首页</string>
+    <string name="bottom_name2">图文</string>
+    <string name="bottom_name3">我的</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="done">完成</string>
 </resources>

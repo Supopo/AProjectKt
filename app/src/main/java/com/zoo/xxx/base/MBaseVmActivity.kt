@@ -10,10 +10,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.zoo.mvvmkt.R
 import com.zoo.mvvmkt.databinding.ActivityBaseBinding
+import com.zoo.mvvmkt.ext.notNull
 import com.zoo.mvvmkt.getVmClazz
 import com.zoo.mvvmkt.network.manager.NetState
 import com.zoo.mvvmkt.network.manager.NetworkStateManager
-import com.zoo.mvvmkt.ext.notNull
 import com.zoo.mvvmkt.viewmodel.BaseViewModel
 
 /**
@@ -46,7 +46,7 @@ abstract class MBaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
                 null,
                 false
             )
-            baseBinding.rlContainer.addView(it)
+            baseBinding.rlContainer.addView(it as View?)
 
             setContentView(baseBinding.root)
         }, {

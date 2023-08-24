@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_main"
+        android:checked="true"
+        android:icon="@drawable/ic_demo"
+        android:title="@string/bottom_name1" />
+
+    <item
+
+        android:id="@+id/menu_list"
+        android:icon="@drawable/ic_demo"
+        android:title="@string/bottom_name2" />
+
+    <item
+        android:id="@+id/menu_me"
+        android:icon="@drawable/ic_demo"
+        android:title="@string/bottom_name3" />
+
+</menu>

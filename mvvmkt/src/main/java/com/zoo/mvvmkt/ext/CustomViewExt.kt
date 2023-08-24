@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.text.Html
 import android.text.Spanned
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.view.inputmethod.InputMethodManager
@@ -18,7 +19,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.chad.library.adapter.base.BaseQuickAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationBarView
 import com.zoo.mvvmkt.R
 import com.zoo.mvvmkt.util.SettingUtil
 import com.zoo.mvvmkt.util.appContext
@@ -31,6 +34,80 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerInd
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator
 
+
+fun ViewPager2.initMain(fragment: Fragment, fragments: List<Fragment>): ViewPager2 {
+    //是否可滑动
+    this.isUserInputEnabled = false
+    this.offscreenPageLimit = fragments.size
+    //设置适配器
+    adapter = object : FragmentStateAdapter(fragment) {
+        override fun createFragment(position: Int): Fragment {
+            return fragments[position]
+
+        }
+
+        override fun getItemCount() = fragments.size
+    }
+    return this
+}
+
+/**
+ * BottomNavigation初始化简化操作
+ */
+fun BottomNavigationView.init(navigationItemSelectedAction: (Int) -> Unit): BottomNavigationView {
+    //        <!--        app:itemRippleColor="@null" 取消点击水波纹-->
+    itemRippleColor = null
+    //        <!--        app:itemHorizontalTranslationEnabled="false"  取消位移偏量-->
+    isItemHorizontalTranslationEnabled = false
+
+//    <!-- Label behaves as "labeled" when there are 3 items or less, or "selected" when there are
+//    4 items or more. -->
+//    <enum name="auto" value="-1"/>
+//    <!-- Label is shown on the selected navigation item. -->
+//    <enum name="selected" value="0"/>
+//    <!-- Label is shown on all navigation items. -->
+//    <enum name="labeled" value="1"/>
+//    <!-- Label is not shown on any navigation items. -->
+//    <enum name="unlabeled" value="2"/>
+    //        <!--        app:labelVisibilityMode="labeled"  文字常显示-->
+    labelVisibilityMode = NavigationBarView.LABEL_VISIBILITY_LABELED
+    setOnNavigationItemSelectedListener {
+        navigationItemSelectedAction.invoke(it.itemId)
+        true
+    }
+    return this
+}
+
+
+/**
+ * 拦截BottomNavigation长按事件 防止长按时出现Toast
+ * @receiver BottomNavigationViewEx
+ * @param ids IntArray
+ */
+fun BottomNavigationView.interceptLongClick(vararg ids: Int) {
+    val bottomNavigationMenuView: ViewGroup = (this.getChildAt(0) as ViewGroup)
+    for (index in ids.indices) {
+        bottomNavigationMenuView.getChildAt(index).findViewById<View>(ids[index])
+            .setOnLongClickListener {
+                true
+            }
+    }
+}
+
+
+/**
+ * 设置防止重复点击事件
+ * @param views 需要设置点击事件的view集合
+ * @param interval 时间间隔 默认0.5秒
+ * @param onClick 点击触发的方法
+ */
+fun setOnclickNoRepeat(vararg views: View?, interval: Long = 500, onClick: (View) -> Unit) {
+    views.forEach {
+        it?.clickNoRepeat(interval = interval) { view ->
+            onClick.invoke(view)
+        }
+    }
+}
 
 //绑定普通的Recyclerview
 fun RecyclerView.init(
@@ -118,13 +195,15 @@ fun BaseQuickAdapter<*, *>.setAdapterAnimation(mode: Int) {
 fun MagicIndicator.bindViewPager2(
     viewPager: ViewPager2,
     mStringList: List<String> = arrayListOf(),
-    action: (index: Int) -> Unit = {}) {
+    action: (index: Int) -> Unit = {}
+) {
     val commonNavigator = CommonNavigator(appContext)
     commonNavigator.adapter = object : CommonNavigatorAdapter() {
 
         override fun getCount(): Int {
-            return  mStringList.size
+            return mStringList.size
         }
+
         override fun getTitleView(context: Context, index: Int): IPagerTitleView {
             return ScaleTransitionPagerTitleView(appContext).apply {
                 //设置文本
@@ -142,6 +221,7 @@ fun MagicIndicator.bindViewPager2(
                 }
             }
         }
+
         override fun getIndicator(context: Context): IPagerIndicator {
             return LinePagerIndicator(context).apply {
                 mode = LinePagerIndicator.MODE_EXACTLY

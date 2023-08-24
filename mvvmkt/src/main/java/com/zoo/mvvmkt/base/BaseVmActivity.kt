@@ -43,7 +43,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
                 null,
                 false
             )
-            baseBinding.rlContainer.addView(it)
+            baseBinding.rlContainer.addView(it as View?)
 
             setContentView(baseBinding.root)
         }, {
