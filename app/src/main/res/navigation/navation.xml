@@ -18,10 +18,12 @@
         android:label="SettingFragment"
         tools:layout="@layout/fragment_setting"/>
 
+<!--   当前fragment的入场动画 app:enterAnim="@anim/nav_default_enter_anim"-->
+<!--   前面的fragment的退场动画 app:exitAnim="@anim/nav_default_exit_anim"-->
     <action
         android:id="@+id/to_fragment_setting"
         app:destination="@+id/fragment_setting"
-        app:enterAnim="@anim/nav_default_enter_anim"
+        app:enterAnim="@anim/slide_in_left"
         app:exitAnim="@anim/nav_default_exit_anim"/>
 
 </navigation>
