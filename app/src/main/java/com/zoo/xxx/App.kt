@@ -1,7 +1,7 @@
 package com.zoo.xxx
 
-import com.tencent.mmkv.MMKV
 import com.zoo.mvvmkt.base.BaseApp
+import com.zoo.mvvmkt.util.Logger
 import com.zoo.xxx.event.AppViewModel
 import com.zoo.xxx.event.EventViewModel
 
@@ -11,6 +11,7 @@ val appViewModel: AppViewModel by lazy { App.appViewModelInstance }
 
 //Application全局的ViewModel，用于发送全局通知操作
 val eventViewModel: EventViewModel by lazy { App.eventViewModelInstance }
+
 class App : BaseApp() {
 
     companion object {
@@ -21,5 +22,7 @@ class App : BaseApp() {
 
     override fun onCreate() {
         super.onCreate()
+        //初始化日志系统
+        Logger.init(this)
     }
 }

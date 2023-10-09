@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <application>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application>
             <provider
                 android:authorities="${applicationId}.KtxInstaller"
                 android:name="com.zoo.mvvmkt.util.Ktx"

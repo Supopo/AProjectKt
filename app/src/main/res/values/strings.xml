@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">AProjectKt</string>
+    <string name="app_name_dev">AProjectKtDev</string>
     <string name="bottom_name1">首页</string>
     <string name="bottom_name2">图文</string>
     <string name="bottom_name3">我的</string>

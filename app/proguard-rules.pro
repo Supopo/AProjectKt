@@ -82,6 +82,10 @@
 -keep public class * extends android.view.View
 -keep public class com.google.vending.licensing.ILicensingService
 -keep public class com.android.vending.licensing.ILicensingService
+-keep public class com.google.android.material.bottomnavigation.BottomNavigationView { *; }
+-keep public class com.google.android.material.bottomnavigation.BottomNavigationMenuView { *; }
+-keep public class com.google.android.material.bottomnavigation.BottomNavigationPresenter { *; }
+-keep public class com.google.android.material.bottomnavigation.BottomNavigationItemView { *; }
 
 # 保留support下的所有类及其内部类
 -keep class android.support.** {*;}
@@ -219,31 +223,37 @@
 -keep class * implements com.google.gson.JsonDeserializer
 # Application classes that will be serialized/deserialized over Gso
 
-#glide
+# Glide
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
   **[] $VALUES;
   public *;
 }
 
-#retrofit
+# Retrofit
 -dontwarn retrofit2.**
 -keep class retrofit2.** { *; }
 -keepattributes Signature
 -keepattributes Exceptions
 
+# EventBus
+# 保留EventBus库的核心类和方法
+-keep class org.greenrobot.eventbus.** {*;}
+# 如果您使用EventBus的3.0版本或更高版本，添加以下规则以保留SubscriberInfo索引
+-keep class **.SubscriberInfo {*;}
+# 如果您使用EventBus的3.0版本或更高版本，添加以下规则以保留生成的索引类
+-keepclassmembers class ** {@org.greenrobot.eventbus.Subscribe <methods>;}
+# 如果您使用EventBus的3.0版本或更高版本，添加以下规则以保留注解处理器生成的类
+-keep class **.EventBusIndex {*;}
 
 
--keep public class com.google.android.material.bottomnavigation.BottomNavigationView { *; }
--keep public class com.google.android.material.bottomnavigation.BottomNavigationMenuView { *; }
--keep public class com.google.android.material.bottomnavigation.BottomNavigationPresenter { *; }
--keep public class com.google.android.material.bottomnavigation.BottomNavigationItemView { *; }
 #-----------自己项目内容---------------
 # 在开发的时候我们可以将所有的实体类放在一个包内，这样我们写一次混淆就行了。
 -keep class com.zoo.xxx.bean.** { *; }
-
 # 自定义View的类
 -keep class com.zoo.xxx.widget.** {*;}
+# mvvmkt库
+-keep class com.zoo.mvvmkt.** {*;}
 
 
 
