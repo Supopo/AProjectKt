@@ -25,6 +25,7 @@ class TokenOutInterceptor : Interceptor {
             val responseBody = ResponseBody.create(mediaType, string)
             val apiResponse = gson.fromJson(string, ApiResponse::class.java)
             //判断逻辑 模拟一下
+            //token失效
             if (apiResponse.code == 99999) {
                 //如果是普通的activity话 可以直接跳转，如果是navigation中的fragment，可以发送通知跳转
                 appContext.startActivity(Intent(appContext, LoginActivity::class.java).apply {
