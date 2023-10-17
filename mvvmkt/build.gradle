@@ -86,7 +86,7 @@ dependencies {
     //腾讯MMKV 代替SP
     api 'com.tencent:mmkv:1.0.22'
     //BaseAdapter
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    api 'io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.1'
     //指示器库
     api 'com.github.hackware1993:MagicIndicator:1.7.0'
 
