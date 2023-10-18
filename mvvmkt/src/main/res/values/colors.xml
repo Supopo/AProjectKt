@@ -30,6 +30,9 @@
     <color name="btn_blue">#5D80F2</color>
     <color name="text_blue">#2E4BA3</color>
 
-
+    <!-- 时间选择器 -->
+    <color name="split_line">#11112233</color>
+    <color name="date_text_select">#59B29C</color>
+    <color name="date_text">#333333</color>
 
 </resources>

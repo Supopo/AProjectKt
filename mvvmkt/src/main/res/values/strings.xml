@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KTDemo</string>
-    <string name="my_image_weight">称重</string>
+    <!-- 地区选择器 -->
+    <string name="title_city">请选择地区</string>
 </resources>
