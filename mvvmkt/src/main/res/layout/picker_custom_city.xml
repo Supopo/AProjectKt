@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:text="@string/cancle"
+            android:text="取消"
             android:textColor="@color/date_text_select"
             android:textSize="16sp" />
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/title_city"
+            android:text="选择城市"
             android:textColor="@color/date_text_select"
             android:textSize="20sp" />
 
@@ -36,7 +36,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:text="@string/commit"
+            android:text="提交"
             android:textColor="@color/date_text_select"
             android:textSize="16sp" />
 
@@ -62,20 +62,20 @@
             android:paddingRight="20dp"
             android:paddingBottom="15dp">
 
-            <me.goldze.mvvmhabit.widget.scrollPicker.ScrollPickerView
+            <com.zoo.mvvmkt.widget.scrollPicker.ScrollPickerView
                 android:id="@+id/province_pv"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="1" />
 
 
-            <me.goldze.mvvmhabit.widget.scrollPicker.ScrollPickerView
+            <com.zoo.mvvmkt.widget.scrollPicker.ScrollPickerView
                 android:id="@+id/city_pv"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="1" />
 
-            <me.goldze.mvvmhabit.widget.scrollPicker.ScrollPickerView
+            <com.zoo.mvvmkt.widget.scrollPicker.ScrollPickerView
                 android:id="@+id/area_pv"
                 android:layout_width="0dp"
                 android:layout_height="160dp"

@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:text="@string/cancle"
+            android:text="取消"
             android:textColor="@color/date_text_select"
             android:textSize="16sp" />
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/title_date"
+            android:text="日期"
             android:textColor="@color/date_text_select"
             android:textSize="20sp" />
 
@@ -36,7 +36,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:text="@string/commit"
+            android:text="提交"
             android:textColor="@color/date_text_select"
             android:textSize="16sp" />
 
@@ -73,7 +73,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/year"
+                android:text="年"
                 android:textColor="@color/date_text"
                 android:textSize="18sp" />
 
@@ -88,7 +88,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/month"
+                android:text="月"
                 android:textColor="@color/date_text"
                 android:textSize="18sp" />
 
@@ -103,7 +103,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/day"
+                android:text="日"
                 android:textColor="@color/date_text"
                 android:textSize="18sp" />
 
@@ -119,7 +119,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/hour"
+                android:text="时"
                 android:textColor="@color/date_text"
                 android:textSize="18sp" />
 
@@ -135,7 +135,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/minute"
+                android:text="分"
                 android:textColor="@color/date_text"
                 android:textSize="18sp" />
 

@@ -8,6 +8,7 @@ import com.chad.library.adapter.base.loadState.LoadState
 import com.chad.library.adapter.base.loadState.trailing.TrailingLoadStateAdapter
 import com.zoo.mvvmkt.widget.CustomLoadMoreAdapter
 import com.zoo.xxx.R
+import com.zoo.xxx.adapter.HeaderAdapter
 import com.zoo.xxx.adapter.ListAdapter
 import com.zoo.xxx.base.BaseFragment
 import com.zoo.xxx.databinding.FragmentListBinding
@@ -65,6 +66,9 @@ class ListFragment : BaseFragment<ListViewModel, FragmentListBinding>() {
          * 注意：这个adapter不是前面创建的 mAdapter，而是 helper 所提供的 adapter（ConcatAdapter）
          */
         mDatabind.rvContent.adapter = helper.adapter
+
+        //添加头布局
+        helper.addBeforeAdapter(HeaderAdapter())
 
         //Adapter子View点击事件
         mAdapter.setOnItemClickListener() { _, _, position ->

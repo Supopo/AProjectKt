@@ -6,16 +6,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.DataBindingHolder
-import com.zoo.mvvmkt.util.ActivityMessenger
 import com.zoo.xxx.R
 import com.zoo.xxx.bean.ListBean
-import com.zoo.xxx.databinding.ItemListBinding
+import com.zoo.xxx.databinding.ItemParentListBinding
 
 /**
  * Created by SuperPer'GPT on 2023/10/12.
  * 多层RecyclerView嵌套
  */
-class ParentListAdapter : BaseQuickAdapter<ListBean, DataBindingHolder<ItemListBinding>>() {
+class ParentListAdapter : BaseQuickAdapter<ListBean, DataBindingHolder<ItemParentListBinding>>() {
 
     //使用
 //    val ids = IntArray(2)
@@ -59,12 +58,12 @@ class ParentListAdapter : BaseQuickAdapter<ListBean, DataBindingHolder<ItemListB
     }
 
     override fun onBindViewHolder(
-        holder: DataBindingHolder<ItemListBinding>,
+        holder: DataBindingHolder<ItemParentListBinding>,
         position: Int,
         item: ListBean?
     ) {
         if (item == null) return
-        val binding: ItemListBinding = holder.binding
+        val binding: ItemParentListBinding = holder.binding
         binding.info = item
         binding.executePendingBindings()
 
@@ -90,7 +89,7 @@ class ParentListAdapter : BaseQuickAdapter<ListBean, DataBindingHolder<ItemListB
 
     //局部刷新
     override fun onBindViewHolder(
-        holder: DataBindingHolder<ItemListBinding>,
+        holder: DataBindingHolder<ItemParentListBinding>,
         position: Int,
         item: ListBean?,
         payloads: List<Any>
@@ -100,7 +99,7 @@ class ParentListAdapter : BaseQuickAdapter<ListBean, DataBindingHolder<ItemListB
             //不为空，即调用notifyItemChanged(position,payloads)后执行的，可以在这里获取payloads中的数据进行局部刷新
             val type = payloads[0] as Int // 刷新哪个部分 标志位
             if (type == 10086) {
-                val binding: ItemListBinding = holder.binding
+                val binding: ItemParentListBinding = holder.binding
                 binding.info = item
             }
         }
@@ -110,8 +109,8 @@ class ParentListAdapter : BaseQuickAdapter<ListBean, DataBindingHolder<ItemListB
         context: Context,
         parent: ViewGroup,
         viewType: Int
-    ): DataBindingHolder<ItemListBinding> {
-        return DataBindingHolder<ItemListBinding>(R.layout.item_list, parent)
+    ): DataBindingHolder<ItemParentListBinding> {
+        return DataBindingHolder<ItemParentListBinding>(R.layout.item_list, parent)
     }
 
 }
