@@ -10,11 +10,11 @@ import com.zoo.xxx.utils.CacheUtil
 class AppViewModel : BaseViewModel() {
 
     //App的账户信息
-    var userInfo: UnPeekLiveData<UserInfo>? =
+    var userInfo: UnPeekLiveData<UserInfo> =
         UnPeekLiveData.Builder<UserInfo>().setAllowNullValue(true).create()
 
     init {
         //默认值保存的账户信息，没有登陆过则为null
-        userInfo?.value = CacheUtil.getUser()
+        userInfo.value = CacheUtil.getUser()
     }
 }

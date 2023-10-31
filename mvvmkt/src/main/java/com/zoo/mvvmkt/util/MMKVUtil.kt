@@ -10,21 +10,36 @@ import com.tencent.mmkv.MMKV
  *
  */
 object MMKVUtils {
-    private const val TAG = "cache"
+    //不用同一种ID，这样多个存取快
+    fun instance(tag: String): MMKV {
+        return MMKV.mmkvWithID(tag)
+    }
 
-    fun instance(): MMKV {
-        return MMKV.mmkvWithID(TAG)
+    fun encodeString(key: String, data: String) {
+        instance(key).encode(key, data)
+    }
+
+    fun getString(key: String, defValue: String): String? {
+        return instance(key).getString(key, defValue)
+    }
+
+    fun encodeBoolean(key: String, data: Boolean) {
+        instance(key).encode(key, data)
+    }
+
+    fun getBoolean(key: String, defValue: Boolean): Boolean {
+        return instance(key).getBoolean(key, defValue)
     }
 
     //保存json类型的数据，可以是实体类或者数组类等
     fun <T> saveData2Json(key: String, data: T) {
         val json = if (data == null) "" else Gson().toJson(data)
-        instance().encode(key, json)
+        instance(key).encode(key, json)
     }
 
     //获取保存的json类型的数据，可以是实体类或者数组类等
     inline fun <reified T> getData4Json(key: String): T? {
-        val dataJson = instance().decodeString(key)
+        val dataJson = instance(key).decodeString(key)
         if (!TextUtils.isEmpty(dataJson)) {
             return Gson().fromJson(dataJson, object : TypeToken<T>() {}.type)
         }

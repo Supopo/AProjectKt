@@ -4,6 +4,10 @@
     <data>
 
         <variable
+            name="vm"
+            type="com.zoo.xxx.viewmodel.MeViewModel" />
+
+        <variable
             name="click"
             type="com.zoo.xxx.fragment.MeFragment.ProxyClick" />
     </data>
@@ -21,12 +25,13 @@
             android:text="setting" />
 
         <TextView
-            android:layout_centerInParent="true"
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:onClick="@{()->click.toLogin()}"
             android:padding="10dp"
-            android:text="toLogin" />
+            android:text="@{vm.name}" />
 
     </RelativeLayout>
 </layout>

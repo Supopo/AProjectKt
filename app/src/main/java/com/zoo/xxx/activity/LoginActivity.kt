@@ -22,6 +22,7 @@ class LoginActivity : BaseActivity<MainViewModel, ActivityLoginBinding>() {
     fun onButtonClick(view: View) {
         CacheUtil.setIsLogin(true)
         CacheUtil.setUser(UserInfo(userName = "张三"))
+
         GlobalScope.launch {
             delay(2000)
             ActivityMessenger.startActivity<MainActivity>(this@LoginActivity)

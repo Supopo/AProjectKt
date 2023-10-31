@@ -23,6 +23,8 @@ class App : BaseApp() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        eventViewModelInstance = EventViewModel()
+        appViewModelInstance = AppViewModel()
         //初始化日志系统
         Logger.init(this)
     }

@@ -5,14 +5,12 @@ import android.util.Log
 import com.zoo.mvvmkt.ext.nav
 import com.zoo.mvvmkt.ext.navigateAction
 import com.zoo.mvvmkt.util.ActivityMessenger
-import com.zoo.mvvmkt.util.ActivityMessenger.finish
-import com.zoo.mvvmkt.viewmodel.BaseViewModel
 import com.zoo.xxx.R
 import com.zoo.xxx.activity.LoginActivity
+import com.zoo.xxx.appViewModel
 import com.zoo.xxx.base.BaseFragment
-import com.zoo.xxx.bean.UserInfo
 import com.zoo.xxx.databinding.FragmentMeBinding
-import com.zoo.xxx.utils.CacheUtil
+import com.zoo.xxx.viewmodel.MeViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -20,7 +18,7 @@ import kotlinx.coroutines.launch
 /**
  * Created by SuperPer'GPT on 2023/08/24.
  */
-class MeFragment : BaseFragment<BaseViewModel, FragmentMeBinding>() {
+class MeFragment : BaseFragment<MeViewModel, FragmentMeBinding>() {
     private val TAG = "MeFragment"
 
     override fun initView(savedInstanceState: Bundle?) {
@@ -28,6 +26,10 @@ class MeFragment : BaseFragment<BaseViewModel, FragmentMeBinding>() {
     }
 
     override fun lazyLoadData() {
+        appViewModel.userInfo.value?.let {
+            Log.d("----", "userInfo：" + it.userName.toString())
+            mDatabind.tvName.text = it.userName!!.ifEmpty { it.userName!! }
+        }
 
     }
 
