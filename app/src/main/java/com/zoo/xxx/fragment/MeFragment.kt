@@ -22,13 +22,15 @@ class MeFragment : BaseFragment<MeViewModel, FragmentMeBinding>() {
     private val TAG = "MeFragment"
 
     override fun initView(savedInstanceState: Bundle?) {
+        //很重要！！！别忘记
+        mDatabind.vm = mViewModel
         mDatabind.click = ProxyClick()
     }
 
     override fun lazyLoadData() {
         appViewModel.userInfo.value?.let {
-            Log.d("----", "userInfo：" + it.userName.toString())
-            mDatabind.tvName.text = it.userName!!.ifEmpty { it.userName!! }
+            //要使用mViewModel.name，先绑定xml和viewModel
+            mViewModel.name.set(it.userName!!.ifEmpty { it.userName!! })
         }
 
     }
