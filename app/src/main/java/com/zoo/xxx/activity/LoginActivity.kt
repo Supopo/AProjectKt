@@ -1,6 +1,7 @@
 package com.zoo.xxx.activity
 
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import com.zoo.mvvmkt.util.ActivityMessenger
 import com.zoo.xxx.base.BaseActivity
@@ -17,6 +18,9 @@ class LoginActivity : BaseActivity<MainViewModel, ActivityLoginBinding>() {
     }
 
     override fun createObserver() {
+// 密码可见        InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+// 密码不可见      InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+
     }
 
     fun onButtonClick(view: View) {

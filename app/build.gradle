@@ -22,7 +22,7 @@ android {
 
     defaultConfig {
         minSdk 23
-        targetSdk 31
+        targetSdk 30
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -42,7 +42,9 @@ android {
             buildConfigField "String", "API_BASE_URL", "\"https://store.hongxinshop.com/prod-api/\""
 
             //修改 AndroidManifest.xml
-            manifestPlaceholders = [app_name: "@string/app_name"]
+            manifestPlaceholders = [app_name            : "@string/app_name",
+                                    provider_authorities: "com.zoo.xxx.fileprovider",
+            ]
         }
         dev { // 开发版
             dimension "appType"
@@ -53,7 +55,9 @@ android {
             buildConfigField "boolean", "IS_DEV", "true"
             buildConfigField "String", "API_BASE_URL", "\"https://sit-store.hongxinshop.com:8443/prod-api/\""
 
-            manifestPlaceholders = [app_name: "@string/app_name_dev"]
+            manifestPlaceholders = [app_name            : "@string/app_name_dev",
+                                    provider_authorities: "com.zoo.xxx.dev.fileprovider",
+            ]
         }
     }
 
@@ -108,7 +112,7 @@ android {
 
     //buildFeatures 用于在 Android Gradle 插件中启用或禁用特定的构建功能。
     //这些功能可以是 Kotlin、View Binding、Data Binding、Compose 等。它的作用范围更广，不仅仅是 Data Binding。
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
     }
 }
