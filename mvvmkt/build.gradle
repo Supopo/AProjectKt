@@ -90,4 +90,14 @@ dependencies {
     //指示器库
     api 'com.github.hackware1993:MagicIndicator:1.7.0'
 
+    //PictureSelector图片选择
+    api 'io.github.lucksiege:pictureselector:v3.11.1'
+    // 图片压缩
+    api 'io.github.lucksiege:compress:v3.11.1'
+    //腾讯QMUI
+    api 'com.qmuiteam:qmui:2.0.1'
+    //抽屉布局
+    api 'androidx.drawerlayout:drawerlayout:1.1.1'
+    //图片加载
+    api 'com.github.bumptech.glide:glide:4.12.0'
 }

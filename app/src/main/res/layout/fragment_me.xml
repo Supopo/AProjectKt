@@ -28,10 +28,18 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
             android:onClick="@{()->click.toLogin()}"
             android:padding="10dp"
             android:text="@{vm.name}" />
+
+        <ImageView
+            android:onClick="@{()->click.toSelectPhoto()}"
+            android:id="@+id/iv_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_blue" />
 
     </RelativeLayout>
 </layout>
